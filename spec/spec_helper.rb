@@ -1,8 +1,11 @@
 require 'active_record'
 require 'rspec'
+require 'pry'
 
 require 'division'
 require 'employee'
+require 'project'
+require 'employee_project'
 
 ActiveRecord::Base.establish_connection(YAML::load(File.open('./db/config.yml'))["test"])
 

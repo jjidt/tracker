@@ -12,4 +12,14 @@ describe 'Employee' do
     test_employee = Employee.create(:name => "Bob", :division_id => test_division_id)
     expect(Employee.all.first.division_id).to eq test_division_id
   end
+
+  it "allows you to add projects to an employee" do
+    test_employee = Employee.create(:name => 'steve')
+    test_project = Project.create(:name => 'file_documents')
+    test_project2 = Project.create(:name => 'wash_dishes')
+    test_employee.projects << test_project
+    test_employee.projects << test_project2
+    binding.pry
+    expect(test_employee.projects).to eq [test_project, test_project2]
+  end
 end

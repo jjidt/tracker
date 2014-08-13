@@ -1,4 +1,3 @@
 class Employee < ActiveRecord::Base
-
-  has_many :projects, through: :employee_project
+  has_many :projects, through: :employee_projects
 end
