@@ -13,5 +13,7 @@ RSpec.configure do |config|
   config.after(:each) do
     Employee.all.each { |task| task.destroy }
     Division.all.each { |task| task.destroy }
+    Project.all.each { |task| task.destroy }
+    EmployeeProject.all.each { |task| task.destroy }
   end
 end

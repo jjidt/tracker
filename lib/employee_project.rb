@@ -1,4 +1,4 @@
-class Employee_project < ActiveRecord::Base
-  has_many :employees
-  has_many :projects
+class EmployeeProject < ActiveRecord::Base
+  belongs_to :employee
+  belongs_to :project
 end

@@ -19,7 +19,6 @@ describe 'Employee' do
     test_project2 = Project.create(:name => 'wash_dishes')
     test_employee.projects << test_project
     test_employee.projects << test_project2
-    binding.pry
     expect(test_employee.projects).to eq [test_project, test_project2]
   end
 end
