@@ -28,6 +28,7 @@ describe 'Employee' do
     test_project2 = Project.create(:name => 'wash_dishes')
     test_employee.add_project(test_project, "did it")
     test_employee.add_project(test_project2, "blah blah blah")
-    expect(test_employee.contributions.length).to eq 2
+    binding.pry
+    expect(test_employee.contributions_by_project_name(:name => 'wash_dishes').length).to eq 1
   end
 end

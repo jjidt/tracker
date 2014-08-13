@@ -9,7 +9,8 @@ class Employee < ActiveRecord::Base
     temp.save
   end
 
-  def contributions
-    EmployeeProject.where(:employee_id => self.id)
+  def contributions_by_project_name(attributes)
+    project_id = Project.where(:name => attributes[:name]).first.id
+    EmployeeProject.where(:employee_id => self.id, :project_id => project_id)
   end
 end
