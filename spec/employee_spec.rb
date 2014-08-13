@@ -21,4 +21,13 @@ describe 'Employee' do
     test_employee.projects << test_project2
     expect(test_employee.projects).to eq [test_project, test_project2]
   end
+
+  it "allows you to access an employees contribution history" do
+    test_employee = Employee.create(:name => 'steve')
+    test_project = Project.create(:name => 'file_documents')
+    test_project2 = Project.create(:name => 'wash_dishes')
+    test_employee.add_project(test_project, "did it")
+    test_employee.add_project(test_project2, "blah blah blah")
+    expect(test_employee.contributions.length).to eq 2
+  end
 end
