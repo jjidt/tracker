@@ -9,7 +9,7 @@ describe 'Employee' do
   it "takes a division_id" do
     test_division = Division.create(:name => 'pants')
     test_division_id = test_division.id
-    test_employee = Employee.create(:name => "Bob", :divisions_id => test_division_id)
-    expect(Employee.all.first.divisions_id).to eq test_division_id
+    test_employee = Employee.create(:name => "Bob", :division_id => test_division_id)
+    expect(Employee.all.first.division_id).to eq test_division_id
   end
 end
